@@ -123,3 +123,38 @@ document.getElementById('delete-btn').addEventListener('click', async function()
     }
   }
 });
+document.getElementById('add-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  
+  const nombre = document.getElementById('product-name').value;
+  const precio = parseFloat(document.getElementById('product-price').value);
+  const imagen = document.getElementById('product-image').files[0];
+
+  if (!imagen) {
+    alert("⚠️ Sube una imagen");
+    return;
+  }
+
+  try {
+    // 1. Subir imagen
+    const storageRef = storage.ref(`camisetas/${imagen.name}`);
+    await storageRef.put(imagen);
+    const imagenUrl = await storageRef.getDownloadURL();
+    console.log("Imagen subida. URL:", imagenUrl); // Debug
+
+    // 2. Guardar en Firestore
+    const docRef = await db.collection("camisetas").add({
+      nombre,
+      precio,
+      imagen: imagenUrl,
+      fecha: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    console.log("Documento guardado con ID:", docRef.id); // Debug
+
+    alert("✅ ¡Guardado exitoso!");
+    document.getElementById('add-form').reset();
+  } catch (error) {
+    console.error("Error completo:", error); // Debug detallado
+    alert(`❌ Error: ${error.message}`);
+  }
+});

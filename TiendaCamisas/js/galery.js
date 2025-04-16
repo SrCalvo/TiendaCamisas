@@ -61,3 +61,20 @@ const firebaseConfig = {
   
   // Cargar camisetas al iniciar la página
   window.addEventListener('DOMContentLoaded', cargarCamisetas);
+
+// En galeria.js
+db.collection("camisetas").onSnapshot((querySnapshot) => {
+  const galeria = document.getElementById('galeria-grid');
+  galeria.innerHTML = '';
+  
+  querySnapshot.forEach((doc) => {
+    const camiseta = doc.data();
+    galeria.innerHTML += `
+      <div class="camiseta-card">
+        <img src="${camiseta.imagen}" alt="${camiseta.nombre}">
+        <h3>${camiseta.nombre}</h3>
+        <p>$${camiseta.precio}</p>
+      </div>
+    `;
+  });
+});

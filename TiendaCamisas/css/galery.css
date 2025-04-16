@@ -1,0 +1,36 @@
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .camiseta-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .camiseta-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .camiseta-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .camiseta-card .info {
+    padding: 15px;
+  }
+  
+  .btn-whatsapp {
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

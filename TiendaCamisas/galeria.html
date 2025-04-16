@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería | Camiseton</title>
+    <link rel="stylesheet" href="css/styless.css"> <!-- Estilos base -->
+    <link rel="stylesheet" href="css/galery.css"> <!-- Estilos específicos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header (igual que index.html) -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">CAMISETON</a>
+            <nav class="desktop-nav">
+                <a href="index.html">Inicio</a>
+                <a href="galeria.html" class="active">Galería</a> <!-- Destacar página activa -->
+                <a href="admin.html">Admin</a>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Menú Móvil (igual que index.html) -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="galeria.html" class="active"><i class="fas fa-images"></i> Galería</a> <!-- Destacar activo -->
+        <a href="admin.html"><i class="fas fa-lock"></i> Admin</a>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="gallery-main">
+        <!-- Filtros -->
+        <section class="filters">
+            <div class="container">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="algodon">Algodón</button>
+                <button class="filter-btn" data-filter="deportiva">Deportivas</button>
+                <button class="filter-btn" data-filter="limited">Edición Limitada</button>
+            </div>
+        </section>
+
+        <!-- Grid de Camisetas -->
+        <section class="gallery-grid">
+            <div class="container">
+                <div class="grid" id="gallery-grid">
+                    <!-- Las camisetas se cargan aquí con JS -->
+                </div>
+                <button class="btn" id="load-more">Ver Más</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (igual que index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Camiseton. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script> <!-- Menú móvil -->
+    <script src="js/gallery.js"></script> <!-- Lógica de galería -->
+</body>
+</html>

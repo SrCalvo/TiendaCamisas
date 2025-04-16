@@ -1,0 +1,96 @@
+/* ===== PANEL DE ADMIN ===== */
+.admin-panel {
+    padding: 30px 0;
+    margin-top: 70px; /* Ajuste para header fixed */
+    min-height: calc(100vh - 150px);
+}
+
+.login-section, 
+.management-section {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-section h2, 
+.management-section h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.login-section i, 
+.management-section i {
+    margin-right: 10px;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+/* Cards de Gestión */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    color: var(--secondary);
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.search-results {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px dashed #ddd;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .login-section, 
+    .management-section {
+        padding: 20px;
+    }
+}
